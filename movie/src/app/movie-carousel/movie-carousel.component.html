@@ -1,0 +1,11 @@
+
+
+<div class="movie-carousel">
+    <div class="movie-slide" *ngFor="let movie of movies">
+      <img [src]="movie.poster_path" alt="{{ movie.title }}">
+      <h3>{{ movie.title }}</h3>
+      <p>{{ movie.overview }}</p>
+    </div>
+  </div>
+  
+  
