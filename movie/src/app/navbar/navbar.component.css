@@ -1,7 +1,7 @@
 /* Estilos generales para el navbar */
 .navbar-main {
-  background-color: #333; /* Cambia el color de fondo según tus preferencias */
-  color: white; /* Cambia el color del texto según tus preferencias */
+  background-color: #333; 
+  color: white; 
   padding: 10px 0;
 }
 
@@ -9,7 +9,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px; /* Ajusta el ancho máximo según tus preferencias */
+  max-width: 1200px; 
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -19,13 +19,13 @@
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: white; /* Cambia el color del texto según tus preferencias */
-  font-weight: 800; /* Opcional, ajusta según tus preferencias */
+  color: white; 
+  font-weight: 800; 
   font-size: 22px;
 }
 
 .logo-page-movie {
-  width: 40px; /* Ajusta el tamaño del logo según tus preferencias */
+  width: 40px; 
   margin: 10px;
   display: flex;
   align-items: center;
@@ -50,11 +50,11 @@
 
 .navbar-options-main a {
   text-decoration: none;
-  color: white; /* Cambia el color del texto según tus preferencias */
-  font-weight: 400; /* Opcional, ajusta según tus preferencias */
+  color: white; 
+  font-weight: 400; 
 }
 
-/* Estilos para la barra de búsqueda */
+/* Barra de búsqueda */
 .search {
   display: flex;
   align-items: center;
@@ -68,8 +68,8 @@
 }
 
 .btn-search {
-  background-color: #0068fa; /* Cambia el color del botón según tus preferencias */
-  color: white; /* Cambia el color del texto según tus preferencias */
+  background-color: #0068fa; 
+  color: white; 
   border: none;
   border-radius: 5px;
   padding: 5px 10px;
