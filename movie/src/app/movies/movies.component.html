@@ -1,1 +1,15 @@
-<p>movies works!</p>
+<!-- Filtros por género -->
+<div class="genre-filters">
+    <button (click)="filterByGenre(16)">Animation</button>
+    <button (click)="filterByGenre(99)">Documentary</button>
+    <button (click)="filterByGenre(28)">Action</button>
+    <!-- Agrega más botones para otros géneros con sus respectivos IDs -->
+</div>
+
+  <!-- Tarjetas de películas -->
+  <div class="movie-cards">
+    <div class="movie-card" *ngFor="let movie of filteredMovies">
+      <img [src]="getPosterUrl(movie.poster_path)" alt="{{ movie.title }}">
+      <h2>{{ movie.title }}</h2>
+    </div>
+  </div>

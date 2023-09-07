@@ -1,0 +1,18 @@
+/* Estilos para la cuadrícula de películas */
+.movie-cards {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 columnas */
+    gap: 20px; /* Espacio entre las cards */
+}
+  
+  /* Estilos para las cards de películas */
+.movie-card {
+    border: 1px solid #dddddd;
+    padding: 10px;
+    text-align: center;
+}
+  
+.movie-card img {
+    max-width: 100%; /* Asegura que las imágenes no excedan el ancho de la card */
+}
+  
