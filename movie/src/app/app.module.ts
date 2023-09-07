@@ -7,6 +7,9 @@ import { MovieCarouselComponent } from './movie-carousel/movie-carousel.componen
 import { MoviesService } from './service/movies.service';
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './navbar/navbar.component';
+import { HomeComponent } from './home/home.component';
+import { MoviesComponent } from './movies/movies.component';
+import { SeriesComponent } from './series/series.component';
 
 
 @NgModule({
@@ -14,6 +17,9 @@ import { NavbarComponent } from './navbar/navbar.component';
     AppComponent,
     MovieCarouselComponent,
     NavbarComponent,
+    HomeComponent,
+    MoviesComponent,
+    SeriesComponent,
   ],
   imports: [
     BrowserModule,

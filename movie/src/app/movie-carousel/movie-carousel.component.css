@@ -2,7 +2,6 @@
     width: 100%;
     color:blanchedalmond;
     display: flex; 
-
 }
 
 img {
@@ -16,18 +15,18 @@ img {
 
 /* Estilos para los indicadores de diapositivas */
 .slide-indicators {
-    text-align: center; /* Alinea los indicadores al centro */
-    margin-top: 10px; /* Espacio entre el carrusel y los indicadores */
+    text-align: center; 
+    margin-top: 10px; 
   }
   
 .slide-indicator {
     display: inline-block; /* Muestra los indicadores en línea */
     width: 10px; 
     height: 10px;
-    background-color: #ccc; /* Color del indicador inactivo */
-    border-radius: 50%; /* Hace que el indicador sea un círculo */
+    background-color: #ccc; 
+    border-radius: 50%; 
     margin: 0 5px; 
-    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    cursor: pointer; 
 }
   
 .slide-indicator.active {
