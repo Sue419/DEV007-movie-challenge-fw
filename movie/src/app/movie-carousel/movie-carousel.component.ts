@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MoviesService } from '../movies.service'; // Ajusta la ruta de importación según la ubicación del servicio
+import { MoviesService } from '../service/movies.service'; // ubicación del servicio
 
 @Component({
   selector: 'app-movie-carousel',
@@ -8,6 +8,8 @@ import { MoviesService } from '../movies.service'; // Ajusta la ruta de importac
 })
 export class MovieCarouselComponent implements OnInit {
   movies: any[] = [];
+  currentSlideIndex: number = 0;
+  selectedMovie: any; // Variable para almacenar la película seleccionada
 
   constructor(private moviesService: MoviesService) {}
 
@@ -19,5 +21,15 @@ export class MovieCarouselComponent implements OnInit {
     });
   }
 
+  getBackdropUrl(backdropPath: string): string {
+    const baseUrl = 'https://image.tmdb.org/t/p/original'; // TMDb base image URL para backdrops originales
+    return `${baseUrl}${backdropPath}`;
+  }
+
+  goToSlide(index: number) {
+    this.currentSlideIndex = index; // Actualiza el índice de la diapositiva
+    this.selectedMovie = this.movies[index]; // Actualiza la película seleccionada
+    console.log(this.selectedMovie); // Imprime la película
+  }
 }
 
