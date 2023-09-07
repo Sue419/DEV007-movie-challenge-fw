@@ -27,7 +27,7 @@ export class MovieCarouselComponent implements OnInit {
   }
 
   goToSlide(index: number) {
-    this.currentSlideIndex = index; // Actualiza el índice de la diapositiva
+    this.currentSlideIndex = index; // Actualiza el índice del slider
     this.selectedMovie = this.movies[index]; // Actualiza la película seleccionada
     console.log(this.selectedMovie); // Imprime la película
   }

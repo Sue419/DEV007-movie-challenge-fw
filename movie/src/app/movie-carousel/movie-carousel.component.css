@@ -22,11 +22,11 @@ img {
   
 .slide-indicator {
     display: inline-block; /* Muestra los indicadores en línea */
-    width: 10px; /* Tamaño del indicador */
+    width: 10px; 
     height: 10px;
     background-color: #ccc; /* Color del indicador inactivo */
     border-radius: 50%; /* Hace que el indicador sea un círculo */
-    margin: 0 5px; /* Espacio entre indicadores */
+    margin: 0 5px; 
     cursor: pointer; /* Cambia el cursor al pasar por encima */
 }
   
