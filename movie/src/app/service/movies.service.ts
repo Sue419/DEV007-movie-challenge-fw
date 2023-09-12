@@ -26,5 +26,3 @@ export class MoviesService {
     return this.http.get(`${this.baseUrl}/discover/movie`, { params });
   }
 }
-
-

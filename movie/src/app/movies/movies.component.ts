@@ -32,4 +32,3 @@ export class MoviesComponent implements OnInit {
       return `${baseUrl}${posterPath}`;
   } 
 }
-
