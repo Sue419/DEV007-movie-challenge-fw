@@ -19,7 +19,10 @@ export class MoviesService {
     return this.http.get(`${this.baseUrl}/movie/popular`, { params });
   }
 
-  
+  getMoviesByGenre(genreId: number): Observable<any> {
+    // Crea un objeto HttpParams y establece los parámetros de consulta
+    const params = new HttpParams().set('api_key', this.apiKey).set('with_genres', genreId.toString());
+    // Realiza la solicitud HTTP utilizando los parámetros de consulta
+    return this.http.get(`${this.baseUrl}/discover/movie`, { params });
+  }
 }
-
-

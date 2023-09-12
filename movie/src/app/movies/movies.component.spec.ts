@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MoviesService } from '../service/movies.service'; // Importa tu servicio de películas
+
 
 import { MoviesComponent } from './movies.component';
 
@@ -8,14 +10,15 @@ describe('MoviesComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [MoviesComponent]
+      declarations: [MoviesComponent],
+      providers: [MoviesService],
     });
     fixture = TestBed.createComponent(MoviesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create a component', () => {
     expect(component).toBeTruthy();
   });
 });

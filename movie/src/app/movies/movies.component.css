@@ -1,0 +1,33 @@
+/* Estilos para los botones de filtrado de películas */
+.genre-filters button{
+    padding: 4px 20px;
+    margin: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0068fa;
+    color:#dddddd;
+    font-weight: 600;
+}
+/* Estilos para la cuadrícula de películas */
+.movie-cards {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 columnas */
+    gap: 20px; /* Espacio entre las cards */
+}
+  
+  /* Estilos para las cards de películas */
+.movie-card {
+    border: 1px solid #dddddd;
+    border-radius: 20px;
+    padding: 10px;
+    text-align: center;
+    color:#dddddd;
+    background-color: rgb(66, 62, 68);
+    margin-top: 5%;
+}
+  
+.movie-card img {
+    max-width: 100%; /* Asegura que las imágenes no excedan el ancho de la card */
+    border-radius: 20px;
+}
+  

@@ -1,6 +1,6 @@
 /* Estilos generales para el navbar */
 .navbar-main {
-  background-color: #333333; 
+  background-color: #452676; 
   color: white; 
   padding: 10px 0;
 
@@ -38,7 +38,7 @@
 }
 
 .right-section {
-display: flex;
+  display: flex;
 }
 .navbar-options-main ul {
   list-style: none;
