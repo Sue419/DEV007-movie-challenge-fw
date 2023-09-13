@@ -1,35 +1,75 @@
-import { Component, OnInit } from '@angular/core';
-import { MoviesService } from '../service/movies.service'; // ubicación del servicio
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { MoviesService } from '../service/movies.service';
 
 @Component({
   selector: 'app-movie-carousel',
   templateUrl: './movie-carousel.component.html',
   styleUrls: ['./movie-carousel.component.css']
 })
-export class MovieCarouselComponent implements OnInit {
+export class MovieCarouselComponent implements OnInit, OnDestroy {
   movies: any[] = [];
   currentSlideIndex: number = 0;
-  selectedMovie: any; // Variable para almacenar la película seleccionada
+  selectedMovie: any;
+
+  autoPlay: boolean = true; // Habilita o deshabilita la reproducción automática
+  autoPlayInterval: number = 5000; // Intervalo en milisegundos entre diapositivas (5 segundos por defecto)
+  autoPlayTimer: any; // Variable para almacenar el temporizador
 
   constructor(private moviesService: MoviesService) {}
 
   ngOnInit() {
-    // En el método ngOnInit, llama al servicio para obtener películas
     this.moviesService.getPopularMovies().subscribe((data: any) => {
-      this.movies = data.results;
-      console.log(this.movies);
+      this.movies = data.results.slice(0, 6);
+      this.startAutoPlay(); // Comienza la reproducción automática
     });
   }
 
+  ngOnDestroy() {
+    this.stopAutoPlay(); // Detiene la reproducción automática al salir del componente
+  }
+
   getBackdropUrl(backdropPath: string): string {
-    const baseUrl = 'https://image.tmdb.org/t/p/original'; // TMDb base image URL para backdrops originales
+    const baseUrl = 'https://image.tmdb.org/t/p/original';
     return `${baseUrl}${backdropPath}`;
   }
 
+  prevSlide() {
+    if (this.currentSlideIndex > 0) {
+      this.currentSlideIndex--;
+      this.stopAutoPlay(); // Detiene la reproducción automática al navegar manualmente
+    }
+  }
+
+  nextSlide() {
+    if (this.currentSlideIndex < this.movies.length - 1) {
+      this.currentSlideIndex++;
+      this.stopAutoPlay(); // Detiene la reproducción automática al navegar manualmente
+    }
+  }
+
   goToSlide(index: number) {
-    this.currentSlideIndex = index; // Actualiza el índice del slider
-    this.selectedMovie = this.movies[index]; // Actualiza la película seleccionada
-    console.log(this.selectedMovie); // Imprime la película
+    this.currentSlideIndex = index;
+    this.selectedMovie = this.movies[index];
+    this.resetAutoPlay(); // Reinicia la reproducción automática después de la navegación manual
+  }
+
+  startAutoPlay() {
+    if (this.autoPlay) {
+      this.autoPlayTimer = setInterval(() => {
+        this.nextSlide();
+      }, this.autoPlayInterval);
+    }
+  }
+
+  stopAutoPlay() {
+    clearInterval(this.autoPlayTimer);
+  }
+
+  resetAutoPlay() {
+    if (this.autoPlay) {
+      this.startAutoPlay();
+    }
   }
 }
+
 

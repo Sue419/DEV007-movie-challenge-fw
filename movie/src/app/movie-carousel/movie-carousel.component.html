@@ -1,15 +1,17 @@
-<!--Slider-->
+<!-- Carrusel de películas -->
 <div class="movie-carousel">
-  <div class="movie-slide" *ngFor="let movie of movies; let i = index">
-    <img [src]="getBackdropUrl(movie.backdrop_path)" alt="{{ movie.title }}">
-    <h3>{{ movie.title }}</h3>
-    <p>{{ movie.overview }}</p>
+  <div class="movie-slide" *ngFor="let movie of movies; let i = index" [class.active]="i === currentSlideIndex">
+    <div class="movie-background" [style.background-image]="'url(' + getBackdropUrl(movie.backdrop_path) + ')'">
+      <div class="movie-content">
+        <h3>{{ movie.title }}</h3>
+        <p>{{ movie.overview }}</p>
+      </div>
+    </div>
+  </div>
+  <!-- Indicadores de diapositivas encima del carrusel -->
+  <div class="slide-indicators">
+    <div class="slide-indicator" *ngFor="let movie of movies; let i = index" [class.active]="i === currentSlideIndex"
+      (click)="goToSlide(i)"></div>
   </div>
 </div>
-<!-- Indicadores de diapositivas -->
-<div class="slide-indicators">
-  <div class="slide-indicator" *ngFor="let movie of movies; let i = index"
-  [class.active]="i === currentSlideIndex"
-  (click)="goToSlide(i)">
-  </div>
-</div>
+
