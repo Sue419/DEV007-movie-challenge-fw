@@ -25,4 +25,14 @@ export class MoviesService {
     // Realiza la solicitud HTTP utilizando los parámetros de consulta
     return this.http.get(`${this.baseUrl}/discover/movie`, { params });
   }
+
+  getMovies(query: string): Observable<any> {
+    // Crea un objeto HttpParams y establece los parámetros de consulta
+    const params = new HttpParams()
+      .set('api_key', this.apiKey)
+      .set('query', query); // Agrega el parámetro 'query' con la consulta proporcionada
+
+    // Realiza la solicitud HTTP utilizando los parámetros de consulta
+    return this.http.get(`${this.baseUrl}/search/movie`, { params });
+  }
 }
