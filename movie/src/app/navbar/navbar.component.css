@@ -1,6 +1,6 @@
 /* Estilos generales para el navbar */
 .navbar-main {
-  background-color: #452676; 
+  background-color: #321f51; 
   color: white; 
   padding: 10px 0;
 
@@ -9,7 +9,7 @@
 .container-navbar {
   display: flex;
   justify-content: space-between;
-  max-width: 1200px; 
+  width: 100%;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -71,10 +71,16 @@
 }
 
 .btn-search {
-  background-color: #0068fa; 
-  color: white; 
+  background-image: url('/assets/search.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
   border: none;
   border-radius: 5px;
   padding: 5px 10px;
   cursor: pointer;
 }
+
