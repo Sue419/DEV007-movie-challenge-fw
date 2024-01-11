@@ -10,6 +10,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { MoviesComponent } from './movies/movies.component';
 import { SeriesComponent } from './series/series.component';
+import { MoviedataComponent } from './moviedata/moviedata.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { SeriesComponent } from './series/series.component';
     HomeComponent,
     MoviesComponent,
     SeriesComponent,
+    MoviedataComponent,
   ],
   imports: [
     BrowserModule,

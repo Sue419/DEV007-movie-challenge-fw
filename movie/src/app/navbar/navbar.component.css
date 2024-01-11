@@ -1,4 +1,10 @@
 /* Estilos generales para el navbar */
+
+.navbar-main_header{
+  display: flex;
+  width: 100%;
+}
+
 .navbar-main {
   background-color: #321f51; 
   color: white; 
