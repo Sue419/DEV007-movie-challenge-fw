@@ -1,5 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MoviesService } from '../service/movies.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-movie-carousel',
@@ -15,11 +17,11 @@ export class MovieCarouselComponent implements OnInit, OnDestroy {
   autoPlayInterval: number = 5000; // Intervalo en milisegundos entre diapositivas (5 segundos por defecto)
   autoPlayTimer: any; // Variable para almacenar el temporizador
 
-  constructor(private moviesService: MoviesService) {}
+  constructor(private moviesService: MoviesService, private router: Router) {}
 
   ngOnInit() {
     this.moviesService.getPopularMovies().subscribe((data: any) => {
-      this.movies = data.results.slice(0, 6);
+      this.movies = data.results.slice(0, 7);
       this.startAutoPlay(); // Comienza la reproducción automática
     });
   }
@@ -28,9 +30,16 @@ export class MovieCarouselComponent implements OnInit, OnDestroy {
     this.stopAutoPlay(); // Detiene la reproducción automática al salir del componente
   }
 
+  //CARROUSEL VER. DESKTOP
   getBackdropUrl(backdropPath: string): string {
     const baseUrl = 'https://image.tmdb.org/t/p/original';
     return `${baseUrl}${backdropPath}`;
+  }
+
+  //CARROUSEL VER. MOBILE
+  getPosterUrl(posterPath: string): string {
+    const baseUrl = 'https://image.tmdb.org/t/p/original';
+    return `${baseUrl}${posterPath}`;
   }
 
   prevSlide() {
@@ -50,6 +59,7 @@ export class MovieCarouselComponent implements OnInit, OnDestroy {
   goToSlide(index: number) {
     this.currentSlideIndex = index;
     this.selectedMovie = this.movies[index];
+    console.log(this.selectedMovie);
     this.resetAutoPlay(); // Reinicia la reproducción automática después de la navegación manual
   }
 
@@ -70,6 +80,8 @@ export class MovieCarouselComponent implements OnInit, OnDestroy {
       this.startAutoPlay();
     }
   }
+
+  goToMovieDetail(movieId: number) {
+    this.router.navigate(['/movie', movieId]);
+  }
 }
-
-

@@ -35,4 +35,10 @@ export class MoviesService {
     // Realiza la solicitud HTTP utilizando los parámetros de consulta
     return this.http.get(`${this.baseUrl}/search/movie`, { params });
   }
+
+  getMovieDetails(movieId: number): Observable<any> {
+    const url = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${this.apiKey}`;
+
+    return this.http.get(url);
+  }
 }
