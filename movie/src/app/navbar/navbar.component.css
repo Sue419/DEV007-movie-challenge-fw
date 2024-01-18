@@ -5,19 +5,14 @@
   width: 100%;
 }
 
-.navbar-main {
-  background-color: #321f51; 
-  color: white; 
-  padding: 10px 0;
-
-}
-
 .container-navbar {
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  align-items: center;
   margin: 0 auto;
-  padding: 0 20px;
+  background-color: #321f51;
+  padding: 10px;
+  width: 100%;
 }
 
 /* Estilos para el logo */
@@ -37,24 +32,30 @@
   align-items: center;
 }
 
+.toggle-bar i {
+  font-size: 24px; 
+  color: #ffffff; 
+}
+
+
 /* Estilos para la sección de opciones */
-.navbar-options-main {
-  display: flex;
+.navbar-options-main { 
+  flex-direction: column;
+  width: 100%;
   align-items: center;
 }
 
-.right-section {
-  display: flex;
-}
+
 .navbar-options-main ul {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
+  flex-direction: column;
 }
 
 .navbar-options-main li {
-  margin: 20px; /* Espaciado entre elementos de la lista */
+  margin: 10px 0;
 }
 
 .navbar-options-main a {

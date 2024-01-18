@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
 
+  isNavbarVisible = false;
+
+  toggleNavbar() {
+    this.isNavbarVisible = !this.isNavbarVisible;
+  }
+
 }
